@@ -51,5 +51,10 @@ public class DepartmentController {
         return departmentService.fetchDepartmentByName(departmentName);
     }
 
+    @GetMapping("/queryget")
+    public List<Department> fetchDepartmentsQuery(){
+        return departmentService.fetchDepartmentsQuery();
+    }
+
 
 }
