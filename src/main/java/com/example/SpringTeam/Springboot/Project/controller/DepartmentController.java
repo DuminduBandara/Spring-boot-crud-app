@@ -1,6 +1,7 @@
 package com.example.SpringTeam.Springboot.Project.controller;
 
 import com.example.SpringTeam.Springboot.Project.entity.Department;
+import com.example.SpringTeam.Springboot.Project.error.DepartmentNoFoundException;
 import com.example.SpringTeam.Springboot.Project.service.DepartmentService;
 import com.example.SpringTeam.Springboot.Project.service.DepartmentServiceImplement;
 import jakarta.validation.Valid;
@@ -38,7 +39,7 @@ public class DepartmentController {
 
 
     @GetMapping("/getDepartment/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNoFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
 
